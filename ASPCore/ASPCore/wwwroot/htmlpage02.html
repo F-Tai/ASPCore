@@ -18,6 +18,11 @@
     <!-- include summernote css/js -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+    <!--https://sweetalert2.github.io/-->
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+
 </head>
 <body>
     <div class="container">
@@ -105,5 +110,29 @@
 
         </form>
     </div>
+    <button type="button" id="demo">Demo</button>
+    <script>
+        $(document).ready(function () {
+            $("#demo").click(function () {
+                Swal.fire({
+                    title: '<strong>HTML <u>example</u></strong>',
+                    icon: 'info',
+                    html:
+                        'You can use <b>bold text</b>, ' +
+                        '<a href="//sweetalert2.github.io">links</a> ' +
+                        'and other HTML tags',
+                    showCloseButton: true,
+                    showCancelButton: true,
+                    focusConfirm: false,
+                    confirmButtonText:
+                        '<i class="fa fa-thumbs-up"></i> Great!',
+                    confirmButtonAriaLabel: 'Thumbs up, great!',
+                    cancelButtonText:
+                        '<i class="fa fa-thumbs-down"></i>',
+                    cancelButtonAriaLabel: 'Thumbs down'
+                })
+            })
+        });
+    </script>
 </body>
 </html>
