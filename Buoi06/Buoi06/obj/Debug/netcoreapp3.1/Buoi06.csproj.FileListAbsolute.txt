@@ -397,3 +397,5 @@ C:\Users\NN\source\repos\ASPCore\Buoi06\Buoi06\obj\Debug\netcoreapp3.1\Buoi06.Mv
 C:\Users\NN\source\repos\ASPCore\Buoi06\Buoi06\obj\Debug\netcoreapp3.1\Razor\Views\Demo\Index.cshtml.g.cs
 C:\Users\NN\source\repos\ASPCore\Buoi06\Buoi06\obj\Debug\netcoreapp3.1\Razor\Views\Demo\Data.cshtml.g.cs
 C:\Users\NN\source\repos\ASPCore\Buoi06\Buoi06\obj\Debug\netcoreapp3.1\Razor\Views\Calculator\Index.cshtml.g.cs
+C:\Users\NN\source\repos\ASPCore\Buoi06\Buoi06\obj\Debug\netcoreapp3.1\Razor\Views\HangHoa\Index.cshtml.g.cs
+C:\Users\NN\source\repos\ASPCore\Buoi06\Buoi06\obj\Debug\netcoreapp3.1\Razor\Views\HangHoa\Create.cshtml.g.cs
