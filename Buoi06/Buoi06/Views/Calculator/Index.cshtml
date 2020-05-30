@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Máy Tính</h1>
+
+<form method="post" asp-controller="Calculator" asp-action="Calculate">
+    <input name="ToanHang1" placeholder="Số thứ nhất 1" type="number" value="@ViewBag.ToanHang1"/>
+    <select name="PhepToan">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input name="ToanHang2" placeholder="Số thứ nhất 2" type="number" value="@ViewBag.ToanHang2"/>
+    <button>=</button>
+    <input class="disabled" placeholder="Kết quả" value="@ViewBag.KetQua"/>
+</form>
+

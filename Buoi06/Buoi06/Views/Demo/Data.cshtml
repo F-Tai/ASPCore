@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Data";
+    var sanpham = ViewBag.HangHoa as HangHoa;
+}
+
+<h1>Data</h1>
+<div>Họ Tên: @ViewBag.HoTen</div>
+<div>Số điện thoai: @ViewBag.SoDienThoai</div>
+<div>Địa chỉ: @ViewBag.DiaChi</div>
+<div>Tuổi: @ViewData["Tuoi"]</div>
+
+<h1>Model</h1>
+<div>Mã hàng hóa: @sanpham.MaHH</div>
+<div>Tên hàng hóa: @sanpham.TenHH</div>
+<div>Đơn giá: @sanpham.Dongia</div>
+<div>Giảm giá: @sanpham.Giamgia</div>
+<div>Giá bán: @sanpham.Giaban</div>

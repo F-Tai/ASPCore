@@ -9,8 +9,17 @@ using Buoi06.Models;
 
 namespace Buoi06.Controllers
 {
+    //[Route("XYZ")]
     public class HomeController : Controller
     {
+        [Route("Demo")] // /Demo
+        [Route("/ViDu")] // /ViDu
+        [Route("[controller]/[action]")]
+        public IActionResult ABC()
+        {
+            return Content("Demo Route");
+        }
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
