@@ -397,3 +397,5 @@ C:\Users\NN\Source\Repos\ASPCore\ASPCore\ASPCore\bin\Debug\netcoreapp3.1\zh-Hans
 C:\Users\NN\Source\Repos\ASPCore\ASPCore\ASPCore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\NN\Source\Repos\ASPCore\ASPCore\ASPCore\obj\Debug\netcoreapp3.1\Razor\Views\HangHoa\Index.cshtml.g.cs
 C:\Users\NN\Source\Repos\ASPCore\ASPCore\ASPCore\obj\Debug\netcoreapp3.1\Razor\Views\HangHoa\Create.cshtml.g.cs
+C:\Users\NN\Source\Repos\ASPCore\ASPCore\ASPCore\obj\Debug\netcoreapp3.1\Razor\Views\HocVien\ThongTin.cshtml.g.cs
+C:\Users\NN\Source\Repos\ASPCore\ASPCore\ASPCore\bin\Debug\netcoreapp3.1\HocVien.json
