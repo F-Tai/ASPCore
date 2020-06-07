@@ -33,5 +33,39 @@ namespace ASPCore.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public string DemoSync()
+        {
+            Stopwatch sw = new Stopwatch();
+            Demo demo = new Demo();
+            sw.Start();
+            demo.Test01();
+            demo.Test02();
+            demo.Test03();
+            sw.Stop();
+
+            return $"Chạy hết {sw.ElapsedMilliseconds} ms";
+        }
+
+        public async Task<IActionResult> ABCD()
+        {
+            Stopwatch sw = new Stopwatch();
+            Demo demo = new Demo();
+            sw.Start();
+            var a = demo.Test01Async();
+            var b = demo.Test02Async();
+            var c = demo.Test03Async();
+            await a;
+            await b;
+            await c;
+            sw.Stop();
+
+            return Content($"Chạy hết {sw.ElapsedMilliseconds} ms");
+        }
+
+        public IActionResult DemoRazor()
+        {
+            return View();
+        }
     }
 }
