@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewData["Title"] = "Validate";
+}
+
+<h1>Validate</h1>
+
+<form id="formDangKy">
+    <h2 class="text-center text-danger">
+        Đăng ký Thành viên
+    </h2>
+    <div class="row m-1">
+        <div class="col-4 col-md-3 text-right">Mã sinh viên</div>
+        <div class="col-8 col-md-9">
+            <input name="MaSV" placeholder="Mã sinh viên" class="w-100" />
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-4 col-md-3 text-right">Họ tên</div>
+        <div class="col-8 col-md-9">
+            <input name="HoTen" placeholder="Họ tên Sinh viên" class="w-100" />
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-4 col-md-3 text-right">Ngày sinh</div>
+        <div class="col-8 col-md-9">
+            <input name="NgaySinh" class="w-100" />
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-4 col-md-3 text-right">Email</div>
+        <div class="col-8 col-md-9">
+            <input name="Email" placeholder="Email" class="w-100" />
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-4 col-md-3 text-right">Xác nhận email</div>
+        <div class="col-8 col-md-9">
+            <input name="XacNhanEmail" placeholder="Xác nhận email" class="w-100" />
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-4 col-md-3 text-right">Số tài khoản</div>
+        <div class="col-8 col-md-9">
+            <input name="SoTaiKhoan" placeholder="Số tài khoản" class="w-100" />
+            @* face credit card; 4485938934410306*@
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-4 col-md-3 text-right">Hình</div>
+        <div class="col-8 col-md-9">
+            <input type="file" name="Hinh" />
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-4 col-md-3 text-right">Điểm</div>
+        <div class="col-8 col-md-9">
+            <input name="Diem" placeholder="Điểm" class="w-100" />
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-4 col-md-3 text-right">Hệ số</div>
+        <div class="col-8 col-md-9">
+            <input name="HeSo" placeholder="Hệ số" class="w-100" />
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-4 col-md-3 text-right">Mã bảo mật</div>
+        <div class="col-8 col-md-9">
+            <span></span>
+            <input name="MaBaoMat" placeholder="Mã bảo mật" class="w-50" />
+            <span class="text-danger" id="ma_bao_mat">@ViewBag.maNgauNhien</span>
+            <button type="button" class="btn btn-danger" id="refreshSecurityCode">Lấy Mã Mới</button>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-4 col-md-3 text-right">Thông tin thêm</div>
+        <div class="col-8 col-md-9">
+            <textarea name="ThongTinThem" class="w-100"></textarea>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-4 col-md-3 text-right"></div>
+        <div class="col-8 col-md-9">
+            <button class="btn btn-success">Đăng ký</button>
+            <button class="btn btn-danger" type="reset">Nhập lại</button>
+        </div>
+    </div>
+</form>
+
+@*Add thêm script vào đúng vị trị*@
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation/dist/additional-methods.js"></script>@*credit card*@
+    @*script nằm phía trong do bị lỗi $ not defined nếu nằm ngoài*@
+    <script>
+        //B1. Định nghĩa hàm kiểm tra
+        // biến var ra khỏi hàm vẫn còn
+        // biến let ra khỏi hàm bị destroy
+        function kiemtraEmail(value, element) {
+            let pattern = /^[a-z]+([.+-_][a-z]+)*@@[a-z]{2,}(\.[a-z]{2,6})+$/;
+            return pattern.test(value) || this.optional(element);            
+        }
+        //B2: thêm vào validate
+        $.validator.addMethod("emailCorrect", kiemtraEmail,"Chưa đúng định dạng email")
+
+        $(function () {
+            $("#refreshSecurityCode").click(function () {
+                //gửi ajax lên server
+                $.ajax({
+                    url: "/Home/SinhMaBaoMat",
+                    success: function (data) {
+                        $("#ma_bao_mat").html(data);
+                    }
+                });
+            });
+
+            $("#formDangKy").validate({
+                rules: {
+                    MaSV: { required: true, minlength: 6 },
+                    HoTen: { required: true },
+                    NgaySinh: { date: true },
+                    Email: { required: true, email: true, emailCorrect: true },
+                    XacNhanEmail: { equalTo: "input[name='Email']" },
+                    SoTaiKhoan: { creditcard: true },
+                    Hinh: { extension: "gif|jpg|png" },
+                    Diem: { number: true, range: [0, 10] },
+                    HeSo: { digits: true, min: 1 },
+                    ThongTinThem: { maxlength: 255 },
+                    MaBaoMat: {remote: "/Home/KiemTraBaoMat"}
+                },
+                messages: {
+                    MaSV: { required: "Vui lòng nhập Mã Sinh Viên", minlength: "Tối thiểu 6 ký tự" },
+                    HoTen: { required: "Vui lòng nhập Họ Tên", },
+                    NgaySinh: { date: "Vui lòng nhập đúng định dạng ngày" },
+                    Email: { required: "Vui lòng nhập Email", email: "Vui lòng nhập đúng định dạng email" },
+                    XacNhanEmail: { equalTo: "Vui lòng nhập email giống nhau" },
+                    SoTaiKhoan: { creditcard: "Vui lòng nhập đúng số tài khoản" },
+                    MaBaoMat: { remote: "Mã bảo mật không đúng" }
+                }
+            });
+        });        
+    </script>
+}

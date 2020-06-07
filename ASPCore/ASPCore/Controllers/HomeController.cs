@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ASPCore.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace ASPCore.Controllers
 {
@@ -62,10 +63,34 @@ namespace ASPCore.Controllers
 
             return Content($"Chạy hết {sw.ElapsedMilliseconds} ms");
         }
-
         public IActionResult DemoRazor()
         {
             return View();
+        }
+        //Buổi 09 - 070620
+        public IActionResult Validate()
+        {
+            ViewBag.maNgauNhien = PhatSinhMaBaoMat();
+            return View();
+        }
+
+        public IActionResult KiemTraBaoMat(string MaBaoMat)
+        {
+            return (HttpContext.Session.GetString("MaBaoMat") == MaBaoMat) ? Content("true") : Content("false");            
+        }
+
+        public string PhatSinhMaBaoMat()
+        {
+            //Sinh ra mã ngẫu nhiên
+            Random rd = new Random();
+            var maNgauNhien = rd.Next(1, 1000).ToString();
+            //Lưu session mã ngẫu nhiên đó
+            HttpContext.Session.SetString("MaBaoMat", maNgauNhien);
+            return maNgauNhien;
+        }
+        public string SinhMaBaoMat()
+        {
+            return PhatSinhMaBaoMat();
         }
     }
 }

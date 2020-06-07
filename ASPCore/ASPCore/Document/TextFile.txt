@@ -1,1 +1,10 @@
 ﻿chrome://flags/#enable-force-dark
+https://hienlth.info/aspcore
+https://github.com/aspnhatnghe
+
+--Buổi 08----
+validate data
+--Buổi 09----
+https://jqueryvalidation.org/
+
+
