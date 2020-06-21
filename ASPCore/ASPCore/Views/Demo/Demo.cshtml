@@ -1,0 +1,24 @@
+﻿@using System.Data;
+@model DataTable;
+@{
+    ViewData["Title"] = "Demo Page";
+}
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Mã Hàng Hóa</th>
+            <th scope="col">Tên Hàng Hóa</th>
+            <th scope="col">Đơn Giá</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataRow row in Model.Rows)
+        {
+            <tr>
+                <td>@row["MaHH"]</td>
+                <td>@row["TenHH"]</td>
+                <td>@row["DonGia"]</td>
+            </tr>
+        }
+    </tbody>
+</table>

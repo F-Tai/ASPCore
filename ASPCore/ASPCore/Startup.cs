@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ASPCore.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +24,10 @@ namespace ASPCore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            var chuoiKetNoi = Configuration.GetConnectionString("MyDB");
+            //map section qua lop SQLConfig
+            var sqlConfigSection = Configuration.GetSection("SQLConfig");
+            services.Configure<SQLConfig>(sqlConfigSection);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

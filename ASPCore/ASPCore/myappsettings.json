@@ -1,0 +1,11 @@
+{
+  "TrungTam": {
+    "Ten": "Nhat Nghe",
+    "Dien Thoai": "0283758964",
+    "ConHoatDong": true
+  },
+  "NgayKhaiGiang": "2020-06-21",
+  "ConnectionStrings": {
+    "MyDB": "Server=.;Database=eStore20; Integrated Security=True"
+  }
+}
