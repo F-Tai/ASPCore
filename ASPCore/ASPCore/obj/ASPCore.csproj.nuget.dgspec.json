@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\NN\\source\\repos\\F-Tai\\ASPCore\\ASPCore\\ASPCore\\ASPCore.csproj": {}
+    "C:\\Users\\NN\\Source\\Repos\\ASPCore\\ASPCore\\ASPCore\\ASPCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\NN\\source\\repos\\F-Tai\\ASPCore\\ASPCore\\ASPCore\\ASPCore.csproj": {
+    "C:\\Users\\NN\\Source\\Repos\\ASPCore\\ASPCore\\ASPCore\\ASPCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\NN\\source\\repos\\F-Tai\\ASPCore\\ASPCore\\ASPCore\\ASPCore.csproj",
+        "projectUniqueName": "C:\\Users\\NN\\Source\\Repos\\ASPCore\\ASPCore\\ASPCore\\ASPCore.csproj",
         "projectName": "ASPCore",
-        "projectPath": "C:\\Users\\NN\\source\\repos\\F-Tai\\ASPCore\\ASPCore\\ASPCore\\ASPCore.csproj",
+        "projectPath": "C:\\Users\\NN\\Source\\Repos\\ASPCore\\ASPCore\\ASPCore\\ASPCore.csproj",
         "packagesPath": "C:\\Users\\NN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\NN\\source\\repos\\F-Tai\\ASPCore\\ASPCore\\ASPCore\\obj\\",
+        "outputPath": "C:\\Users\\NN\\Source\\Repos\\ASPCore\\ASPCore\\ASPCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\NN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,24 @@
         "netcoreapp3.1": {
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.3, )"
             }
