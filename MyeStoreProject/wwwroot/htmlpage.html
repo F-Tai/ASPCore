@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="lib/jquery/dist/jquery.js"></script>
+</head>
+<body>
+    <h2 id="clock"></h2>
+    <script>
+        $(function () {
+            //lay data do vao
+            function LayGio() {
+                $.ajax({
+                    url: "/Ajax/ServerTime",
+                    success: function (returnData) {
+                        $("h2#clock").html(returnData);
+                    }
+                });
+            }
+            LayGio();
+            setInterval(LayGio, 1000);
+        });
+
+
+    </script>
+</body>
+</html>
