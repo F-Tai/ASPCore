@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lFht9pdzh18m677/K3BTJQaE/fSsIn0eMUoMJ1T3oS5VBU/BZPg+Eb+zh31npVPzMSn9AjeFKQGIu0SOC4F/5Q==",
+  "dgSpecHash": "5KvRsooujezHFrq2BhtfSWFLO1lPycYyuQF8MywgxBI/4k0Y1zOLQU+exIObUwtb5U6H8Afn3Tedb88N45Obig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\NN\\Source\\Repos\\ASPCoreMay2020\\MyeStoreProject\\MyeStoreProject.csproj",
+  "projectFilePath": "C:\\Users\\NN\\Source\\Repos\\ASPCore\\MyeStoreProject\\MyeStoreProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NN\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\NN\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\3.1.3\\microsoft.aspnetcore.mvc.razor.extensions.3.1.3.nupkg.sha512",

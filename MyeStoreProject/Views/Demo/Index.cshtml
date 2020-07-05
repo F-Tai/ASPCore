@@ -1,0 +1,11 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<div></div>
+<div>năn: @Context.Session.GetInt32("NamThanhLap")</div>
+<div>Tên: @Context.Session.GetString("Ten")</div>
+
+

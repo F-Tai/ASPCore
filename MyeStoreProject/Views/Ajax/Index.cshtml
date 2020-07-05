@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+    <link href="~/css/HangHoa.css" rel="stylesheet" />
+
+<h1>Danh Sách Hàng Hóa</h1>
+
+<div class="container" id="result"> 
+
+</div>
+
+@section Scripts {
+    <script>
+        var tongSoTrang = @ViewBag.TongSoTrang;
+        var tranghientai = 1;
+
+        function loadMode(pageIndex) {
+            $.ajax({
+                url: "/Ajax/LoadMore",
+                data: { page: pageIndex },
+                success: function (respones) {
+                    $("#result").append(respones);
+                }
+            });
+        }
+
+        $(function () {
+            loadMode(tranghientai);
+            // gắn sự kiện load more 
+            $(window).scroll(function () {
+                if (tranghientai <= tongSoTrang) {
+                    tranghientai++;
+                    loadMode(tranghientai);
+                }
+
+            });
+        });
+    </script>
+}

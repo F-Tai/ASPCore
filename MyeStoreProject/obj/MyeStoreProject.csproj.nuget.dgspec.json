@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\NN\\Source\\Repos\\ASPCoreMay2020\\MyeStoreProject\\MyeStoreProject.csproj": {}
+    "C:\\Users\\NN\\Source\\Repos\\ASPCore\\MyeStoreProject\\MyeStoreProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\NN\\Source\\Repos\\ASPCoreMay2020\\MyeStoreProject\\MyeStoreProject.csproj": {
+    "C:\\Users\\NN\\Source\\Repos\\ASPCore\\MyeStoreProject\\MyeStoreProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\NN\\Source\\Repos\\ASPCoreMay2020\\MyeStoreProject\\MyeStoreProject.csproj",
+        "projectUniqueName": "C:\\Users\\NN\\Source\\Repos\\ASPCore\\MyeStoreProject\\MyeStoreProject.csproj",
         "projectName": "MyeStoreProject",
-        "projectPath": "C:\\Users\\NN\\Source\\Repos\\ASPCoreMay2020\\MyeStoreProject\\MyeStoreProject.csproj",
+        "projectPath": "C:\\Users\\NN\\Source\\Repos\\ASPCore\\MyeStoreProject\\MyeStoreProject.csproj",
         "packagesPath": "C:\\Users\\NN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\NN\\Source\\Repos\\ASPCoreMay2020\\MyeStoreProject\\obj\\",
+        "outputPath": "C:\\Users\\NN\\Source\\Repos\\ASPCore\\MyeStoreProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\NN\\AppData\\Roaming\\NuGet\\NuGet.Config",
