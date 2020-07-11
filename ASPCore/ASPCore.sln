@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPCore", "ASPCore\ASPCore.csproj", "{8AC305AB-0072-4D77-836A-EBE35457B34F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPCore", "ASPCore\ASPCore.csproj", "{8AC305AB-0072-4D77-836A-EBE35457B34F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAuthentication", "DemoAuthentication\DemoAuthentication.csproj", "{9E93DCB8-5837-435F-8665-D29161C14E79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8AC305AB-0072-4D77-836A-EBE35457B34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AC305AB-0072-4D77-836A-EBE35457B34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AC305AB-0072-4D77-836A-EBE35457B34F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E93DCB8-5837-435F-8665-D29161C14E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E93DCB8-5837-435F-8665-D29161C14E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E93DCB8-5837-435F-8665-D29161C14E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E93DCB8-5837-435F-8665-D29161C14E79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

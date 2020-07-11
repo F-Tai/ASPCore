@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,13 @@ namespace MyeStoreProject
         {
             services.AddControllersWithViews();
             services.AddDbContext<eStore20Context>(option => option.UseSqlServer(Configuration.GetConnectionString("EstoreDb")));
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/KhachHang/Login";
+                    options.LogoutPath = "/KhachHang/Logout";
+                    options.AccessDeniedPath = "/KhachHang/Access";
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +52,7 @@ namespace MyeStoreProject
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
 
             app.UseRouting();
 
