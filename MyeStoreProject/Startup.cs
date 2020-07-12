@@ -1,14 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.CodeAnalysis.FlowAnalysis;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using MyeStoreProject.Models;
 
 namespace MyeStoreProject
@@ -27,6 +31,32 @@ namespace MyeStoreProject
         {
             services.AddControllersWithViews();
             services.AddDbContext<eStore20Context>(option => option.UseSqlServer(Configuration.GetConnectionString("EstoreDb")));
+
+            var AppSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSetting>(AppSettingsSection);
+            // Cach 1
+            //var secretKey = Configuration["AppSetting:SecretKey"];
+            // Cach 2
+            var appSetting = AppSettingsSection.Get<AppSetting>();
+            var keyByte = Encoding.UTF8.GetBytes(appSetting.SecretKey);
+
+            //khai bao su dung Authentication
+            services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(cfg =>  {
+                cfg.SaveToken = true;
+                cfg.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                { 
+                    // tu validata & cap token
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    // cau hinh ky
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(keyByte)
+                };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +77,8 @@ namespace MyeStoreProject
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();            
 
             app.UseEndpoints(endpoints =>
             {
